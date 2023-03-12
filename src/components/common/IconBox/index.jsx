@@ -2,7 +2,7 @@ import { IconBoxStyled } from './styled'
 
 const IconBox = ({children}) => {
   return (
-    <IconBoxStyled>{children}</IconBoxStyled>
+    <IconBoxStyled className='heart'>{children}</IconBoxStyled>
   )
 }
 

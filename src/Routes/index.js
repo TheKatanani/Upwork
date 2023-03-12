@@ -6,7 +6,7 @@ import FindWork from "../Pages/FindWork"
 const Signup = lazy(()=>import("../Pages/Signup"))
 const Login = lazy(()=>import("../Pages/Login"))
 const PageNotFound = lazy(()=>import("../Pages/PageNotFound"))
-// const Page2 = lazy(()=>import("../Pages/Page2"))
+const JobDetails = lazy(()=>import("../Pages/JobDetails"))
 // const Page3 = lazy(()=>import("../Pages/Page3"))
 // const Page4 = lazy(()=>import("../Pages/Page4"))
 const PrivateRoute = lazy(()=>import("./PriveteRoutes"))
@@ -20,6 +20,7 @@ const MyRoutes = ()=>{
           <Route path="/signUp" element={state.isAuthenticated?<Navigate to='/Home' />:<Signup />} />
           <Route path="/Home" element={<PrivateRoute/>}>
             <Route index element={<FindWork/>}  />
+            <Route path="details/:id" element={<JobDetails/>}  />
             <Route path="*" element={<PageNotFound/>} />
           </Route>
             <Route path="/*" element={<PageNotFound/>} />
