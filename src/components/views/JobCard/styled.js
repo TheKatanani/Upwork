@@ -40,10 +40,7 @@ export const StyledCard =styled.div`
       line-height: 20px;
       letter-spacing: 0.6px;
     }
-    .skills{
-      display: flex;
-      gap: 5px;
-    }
+    
     .proposals{
       display: flex;
       margin: 19px 0 13px;

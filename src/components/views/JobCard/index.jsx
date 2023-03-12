@@ -1,26 +1,22 @@
-import { Heart, Location, UnLike, UnVeriried, Veriried } from "../../../assets/Icons";
+import { Link } from "react-router-dom";
+import { Heart, Location, UnLike, UnVeriried, Verified } from "../../../assets/Icons";
+import dateCalculator from "../../../utils/dateCalculator";
 import IconBox from "../../common/IconBox";
 import Rating from "../../common/Rating";
-import Skill from "../../common/Skill";
+import Skills from "../Skills";
 import { StyledCard } from "./styled";
 
 
 function JobCard({ data }) {
-  const dateCalculator = (postTime) => {
-    const date = new Date(postTime);
-    const options = {
-      year: 'numeric', month: 'short', day: 'numeric',
-      hour: 'numeric', minute: 'numeric'
-    };
-    return date.toLocaleDateString('en-US', options);
-  }
   return (
     <StyledCard>
       <header>
         <h3 className="title">{data.title}</h3>
         <div className="icons">
           <IconBox><UnLike /></IconBox>
-          <IconBox><Heart /></IconBox>
+          <Link to={`details/${data.id}`}>
+            <IconBox><Heart /></IconBox>
+          </Link>
         </div>
       </header>
       <main>
@@ -33,18 +29,16 @@ function JobCard({ data }) {
         <p className="description">
           {data.description}
         </p>
-        <div className="skills">
-          {data.skills.map((el, i) => <Skill className="skill" key={i}>{el}</Skill>)}
-        </div>
+        <Skills data={data.skills} />
         <div className="proposals"><p>Proposals:</p><span>{data.proposals}</span></div>
       </main>
       <footer>
-        <span className="verified">{data.verified?<><Veriried/> Payment verified</>:<> <UnVeriried/>Payment verified</>}</span>
+        <span className="verified">{data.verified ? <><Verified /> Payment verified</> : <> <UnVeriried />Payment verified</>}</span>
         <Rating num={data.star} />
         <span className="spent">${data.spent}+</span>
-        <span className="location"><Location/>{data.location}</span>
+        <span className="location"><Location />{data.location}</span>
       </footer>
-    </StyledCard>
+    </StyledCard >
   )
 }
 

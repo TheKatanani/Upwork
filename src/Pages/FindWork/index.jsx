@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container } from '../../assets/styled-components/components'
-import AppFooter from '../../components/views/AppFooter'
 import Aside from '../../components/views/Aside'
 import JobsMightLike from '../../components/views/JobsMightLike'
 import SearchForJob from '../../components/views/SearchForJob'
@@ -16,7 +15,6 @@ function FindWork() {
         </main>
         <Aside />
       </Container>
-      <AppFooter/>
     </StyledFindWork>
   )
 }

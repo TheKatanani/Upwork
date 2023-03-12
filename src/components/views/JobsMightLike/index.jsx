@@ -1,12 +1,12 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import {  NavLink } from 'react-router-dom'
 import useFetch from '../../../hook/useFetch'
 import JobCard from '../JobCard'
 import Loading from '../../common/Loading'
 import { JobsMightLikeStyled } from './styled'
 import { mainApi } from '../../../API'
 const JobsMightLike = () => {
-  const { data, isLoading, error } = useFetch(`${mainApi}product`);
+  const { data, isLoading, error } = useFetch(`${mainApi}products`);
   return (
     <JobsMightLikeStyled>
       <header>
