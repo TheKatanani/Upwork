@@ -1,24 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {  Search2 } from '../../../assets/Icons';
-import Input from '../../common/Input'
+import SearchInput from '../../common/SearchInput';
+import SearchResult from '../../ui/SearchResult';
 import { StyleSearchBox } from './styled';
 
 function SearchBox() {
-  // create slice and func these to pass the error
-  const handleInputChangeFun = ()=>{}
-  let test = "" ;
+  const [show, setShow] = useState(false);
+
   return (
-    <StyleSearchBox>
-        <Input
-            onChange={handleInputChangeFun}
-            id="search"
-            type="text"
-            placeholder="Search for job"
-            value={test}
-        />
+    <StyleSearchBox {...{show}} className='SearchBox'>
+        <SearchInput {...{setShow}} />
         <div className="iconArea">
           <Search2/>
         </div>
+        <SearchResult/>
     </StyleSearchBox>
   )
 }

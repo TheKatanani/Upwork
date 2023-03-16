@@ -78,9 +78,9 @@ export const StyledCard =styled.div`
   }
   }
   :hover{
-    background-color:${({theme})=>`${theme.palette.ColorApp.up_green_light}`} ;
+    background-color:${({theme})=>`${theme.palette.ColorApp.card_hover}`} ;
     .icons{
-      >span{
+      button{
         position:relative;
         background-color:white;
         &:hover{

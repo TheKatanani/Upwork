@@ -22,9 +22,9 @@ export const JobsMightLikeStyled = styled.div`
           a{
             padding: 10px 12px;
             text-decoration: none;
+            font-size: ${({theme}) =>theme.fontSizes.body}rem;
             &.active{
-              font-size: ${({theme}) =>theme.fontSizes.body}rem;
-              border-bottom:2px solid ${({theme})=>theme.palette.font};
+              border-bottom:3px solid ${({theme})=>theme.palette.font};
             }
             :hover{
               color: ${({theme})=>theme.palette.font};

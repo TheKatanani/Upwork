@@ -1,22 +1,36 @@
-import { Link } from "react-router-dom";
-import { Heart, Location, UnLike, UnVeriried, Verified } from "../../../assets/Icons";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { mainApi } from "../../../API";
+import { Heart, HeartSelected, Location, UnLike, UnVeriried, Verified } from "../../../assets/Icons";
+import usePutData from "../../../hook/usePutData";
+import { showPortal } from "../../../redux/reducers/portal";
 import dateCalculator from "../../../utils/dateCalculator";
 import IconBox from "../../common/IconBox";
 import Rating from "../../common/Rating";
 import Skills from "../Skills";
 import { StyledCard } from "./styled";
-
-
-function JobCard({ data }) {
+const JobCard = ({ data }) => {
+  const [save, setSeve] = useState(data.isSaved);
+  const dispatch = useDispatch()
+  const { postData } = usePutData(`${mainApi}jobs/${data.id}`)
+  const saveJob = (e) => {
+    e.stopPropagation();
+    postData({ ...data, "isSaved": !data.isSaved })
+    setSeve(prev => !prev)
+  }
   return (
-    <StyledCard>
+    <StyledCard
+      onClick={() => {
+        dispatch(showPortal({ show: true, id: data.id }))
+      }}
+    >
       <header>
         <h3 className="title">{data.title}</h3>
         <div className="icons">
           <IconBox><UnLike /></IconBox>
-          <Link to={`details/${data.id}`}>
-            <IconBox><Heart /></IconBox>
-          </Link>
+          <div onClick={saveJob}>
+            <IconBox>{save ? <HeartSelected /> : <Heart />}</IconBox>
+          </div>
         </div>
       </header>
       <main>

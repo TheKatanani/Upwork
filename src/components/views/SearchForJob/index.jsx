@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchBox from './SearchBox'
 import { SearchForJobStyle } from './styled'
-const mook = ["react","frontEnd","js"]
+const mook = ["react","frontEnd","js"]//get it from the db
 function SearchForJob() {
   return (
     <SearchForJobStyle>

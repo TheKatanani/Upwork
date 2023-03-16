@@ -1,11 +1,17 @@
 {
-  "products":[
+  "jobs": [
     {
-      "id":1,
-      "jobType":"Front-end Developer",
+      "id": 1,
+      "isSaved": true,
+      "jobType": "Front-end Developer",
       "title": "Front-end Developer(HTML5/CSS3/Bootstrap)",
       "description": "Looking for a super fast front-end developer who can help us to build our home page. We already redesigned our home page and you will have to rebuild it in HTML5, CSS3, and Bootstrap so that we can import it into our main PHP project. Will share the final design to selected candidate.",
-      "skills": ["CSS", "JavaScript (ES6+)", "React", "Node.js"],
+      "skills": [
+        "CSS",
+        "JavaScript (ES6+)",
+        "React",
+        "Node.js"
+      ],
       "priceType": "fixed-price",
       "HourlyRate": "",
       "budget": 500,
@@ -18,11 +24,16 @@
       "spent": 1200
     },
     {
-      "id":2,
-      "jobType":"Back-end Developer",
+      "id": 2,
+      "isSaved": true,
+      "jobType": "Back-end Developer",
       "title": "Build a mobile app",
       "description": "Looking for an experienced developer to build a mobile app for iOS and Android.",
-      "skills": ["iOS development", "Android development", "UI/UX design"],
+      "skills": [
+        "iOS development",
+        "Android development",
+        "UI/UX design"
+      ],
       "priceType": "Fixed-price",
       "developerLevel": "Expert",
       "budget": 5000,
@@ -34,11 +45,17 @@
       "spent": 10000
     },
     {
-      "id":3,
-      "jobType":"Front-end Developer",
+      "id": 3,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "Website redesign",
       "description": "We need a professional web designer to redesign our company website.",
-      "skills": ["Web design", "HTML", "CSS", "JavaScript"],
+      "skills": [
+        "Web design",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
       "priceType": "Hourly",
       "developerLevel": "Intermediate",
       "budget": 50,
@@ -50,8 +67,9 @@
       "spent": 0
     },
     {
-      "id":4,
-      "jobType":"Back-end Developer",
+      "id": 4,
+      "isSaved": false,
+      "jobType": "Back-end Developer",
       "title": "E-commerce website development",
       "description": "We want to build an e-commerce website with advanced search and filtering capabilities.",
       "skills": [
@@ -71,8 +89,9 @@
       "spent": 20000
     },
     {
-      "id":5,
-      "jobType":"Front-end Developer",
+      "id": 5,
+      "isSaved": true,
+      "jobType": "Front-end Developer",
       "title": "Mobile game development",
       "description": "We're looking for a developer to create a fun and addictive mobile game for iOS and Android.",
       "skills": [
@@ -92,13 +111,21 @@
       "spent": 15000
     },
     {
-      "id":6,
-      "jobType":"Front-end Developer",
+      "id": 6,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "React Native App Development",
       "description": "We are looking for an experienced React Native developer to build an app for our e-commerce website.",
-      "skills": ["React Native", "JavaScript", "Firebase"],
+      "skills": [
+        "React Native",
+        "JavaScript",
+        "Firebase"
+      ],
       "priceType": "Hourly",
-      "hourlyPrice": { "from": 20, "to": 30 },
+      "hourlyPrice": {
+        "from": 20,
+        "to": 30
+      },
       "developerLevel": "Intermediate",
       "budget": 5000,
       "postTime": "2023-02-28T09:30:00.000Z",
@@ -109,11 +136,16 @@
       "spent": 3000
     },
     {
-      "id":7,
-      "jobType":"Front-end Developer",
+      "id": 7,
+      "isSaved": true,
+      "jobType": "Front-end Developer",
       "title": "UI Design for a Fitness App",
       "description": "We need a skilled UI designer to create the visual design and layout for our new fitness app.",
-      "skills": ["UI Design", "Adobe XD", "User Research"],
+      "skills": [
+        "UI Design",
+        "Adobe XD",
+        "User Research"
+      ],
       "priceType": "Fixed-Price",
       "fixedPrice": 1000,
       "developerLevel": "Expert",
@@ -126,13 +158,21 @@
       "spent": 0
     },
     {
-      "id":8,
-      "jobType":"Front-end Developer",
+      "id": 8,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "Node.js Web Application Development",
       "description": "We are seeking a talented Node.js developer to build a web application for our e-learning platform.",
-      "skills": ["Node.js", "Express.js", "MongoDB"],
+      "skills": [
+        "Node.js",
+        "Express.js",
+        "MongoDB"
+      ],
       "priceType": "Hourly",
-      "hourlyPrice": { "from": 25, "to": 35 },
+      "hourlyPrice": {
+        "from": 25,
+        "to": 35
+      },
       "developerLevel": "Senior",
       "budget": 10000,
       "postTime": "2023-03-02T16:10:00.000Z",
@@ -143,11 +183,16 @@
       "spent": 8000
     },
     {
-      "id":9,
-      "jobType":"Graphic Designer",
+      "id": 9,
+      "isSaved": false,
+      "jobType": "Graphic Designer",
       "title": "Logo Design for a New Restaurant",
       "description": "We need a creative logo designer to create a logo for our new restaurant.",
-      "skills": ["Logo Design", "Adobe Illustrator", "Branding"],
+      "skills": [
+        "Logo Design",
+        "Adobe Illustrator",
+        "Branding"
+      ],
       "priceType": "Fixed-Price",
       "fixedPrice": 500,
       "developerLevel": "Intermediate",
@@ -160,13 +205,21 @@
       "spent": 0
     },
     {
-      "id":10,
-      "jobType":"Front-end Developer",
+      "id": 10,
+      "isSaved": true,
+      "jobType": "Front-end Developer",
       "title": "React Front-End Development for a Social Media Platform",
       "description": "We are looking for an experienced React front-end developer to build the user interface for our social media platform.",
-      "skills": ["React.js", "JavaScript", "CSS"],
+      "skills": [
+        "React.js",
+        "JavaScript",
+        "CSS"
+      ],
       "priceType": "Hourly",
-      "hourlyPrice": { "from": 30, "to": 40 },
+      "hourlyPrice": {
+        "from": 30,
+        "to": 40
+      },
       "developerLevel": "Expert",
       "budget": 15000,
       "postTime": "2023-03-06T14:50:00.000Z",
@@ -177,11 +230,17 @@
       "spent": 12000
     },
     {
-      "id":11,
-      "jobType":"Front-end Developer",
+      "id": 11,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "Build a React Native App",
       "description": "Develop a mobile app for both iOS and Android platforms using React Native.",
-      "skills": ["React Native", "JavaScript", "iOS", "Android"],
+      "skills": [
+        "React Native",
+        "JavaScript",
+        "iOS",
+        "Android"
+      ],
       "priceType": "Hourly",
       "developerLevel": "Intermediate",
       "budget": "$5000",
@@ -194,11 +253,16 @@
       "hourlyRate": "Hourly: $50-$75"
     },
     {
-      "id":12,
-      "jobType":"Front-end Developer",
+      "id": 12,
+      "isSaved": true,
+      "jobType": "Front-end Developer",
       "title": "Design a Company Logo",
       "description": "Create a logo for our new company that reflects our brand and values.",
-      "skills": ["Graphic Design", "Logo Design", "Brand Identity"],
+      "skills": [
+        "Graphic Design",
+        "Logo Design",
+        "Brand Identity"
+      ],
       "priceType": "Fixed-price",
       "developerLevel": "Expert",
       "budget": "$1000",
@@ -211,11 +275,18 @@
       "hourlyRate": ""
     },
     {
-      "id":13,
-      "jobType":"Front-end Developer",
+      "id": 13,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "Develop a Custom WordPress Theme",
       "description": "Design and develop a custom WordPress theme based on our design requirements.",
-      "skills": ["WordPress", "PHP", "HTML", "CSS", "Web Design"],
+      "skills": [
+        "WordPress",
+        "PHP",
+        "HTML",
+        "CSS",
+        "Web Design"
+      ],
       "priceType": "Hourly",
       "developerLevel": "Intermediate",
       "budget": "$4000",
@@ -228,11 +299,17 @@
       "hourlyRate": "Hourly: $25-$50"
     },
     {
-      "id":14,
-      "jobType":"Front-end Developer",
+      "id": 14,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "Write an E-book on Health and Wellness",
       "description": "Create a comprehensive e-book on health and wellness topics with at least 50 pages.",
-      "skills": ["Writing", "Research", "Health", "Wellness"],
+      "skills": [
+        "Writing",
+        "Research",
+        "Health",
+        "Wellness"
+      ],
       "priceType": "Fixed-price",
       "developerLevel": "Expert",
       "budget": "$1500",
@@ -245,11 +322,17 @@
       "hourlyRate": ""
     },
     {
-      "id":15,
-      "jobType":"Front-end Developer",
+      "id": 15,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "Develop a Machine Learning Model for Predicting Stock Prices",
       "description": "Design and implement a machine learning model for predicting stock prices based on historical data.",
-      "skills": ["Machine Learning", "Python", "Data Analysis", "Statistics"],
+      "skills": [
+        "Machine Learning",
+        "Python",
+        "Data Analysis",
+        "Statistics"
+      ],
       "priceType": "Hourly",
       "developerLevel": "Expert",
       "budget": "$8000",
@@ -262,11 +345,16 @@
       "hourlyRate": "Hourly: $100-$150"
     },
     {
-      "id":16,
-      "jobType":"Front-end Developer",
+      "id": 16,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "React Native App Development",
       "description": "I am looking for an experienced React Native developer to build a mobile app for my business.",
-      "skills": ["React Native", "JavaScript", "Firebase"],
+      "skills": [
+        "React Native",
+        "JavaScript",
+        "Firebase"
+      ],
       "priceType": "Fixed-price",
       "budget": 5000,
       "developerLevel": "Expert",
@@ -278,28 +366,42 @@
       "spent": 10000
     },
     {
-      "id":17,
-      "jobType":"Back-end Developer",
+      "id": 17,
+      "isSaved": false,
+      "jobType": "Back-end Developer",
       "title": "Logo Design for Business",
       "description": "I need a professional logo for my new business. The logo should be modern and eye-catching.",
-      "skills": ["Logo Design", "Graphic Design", "Illustrator"],
+      "skills": [
+        "Logo Design",
+        "Graphic Design",
+        "Illustrator"
+      ],
       "priceType": "Fixed-price",
       "budget": 200,
       "developerLevel": "Intermediate",
       "postTime": "2023-03-02T08:15:00Z",
       "proposals": 15,
       "verified": false,
-      "star": 3.0,
+      "star": 3,
       "location": "Canada",
       "spent": 0
     },
     {
-      "id":18,
-      "jobType":"Front-end Developer",
+      "id": 18,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "Website Design for E-Commerce Store",
       "description": "I need a talented web designer to create a new design for my online store. The design should be responsive and easy to use.",
-      "skills": ["Web Design", "HTML", "CSS", "JavaScript"],
-      "hourlyPrice": { "from": 30, "to": 40 },
+      "skills": [
+        "Web Design",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "hourlyPrice": {
+        "from": 30,
+        "to": 40
+      },
       "developerLevel": "Expert",
       "postTime": "2023-03-05T11:45:00Z",
       "proposals": 3,
@@ -309,11 +411,15 @@
       "spent": 5000
     },
     {
-      "id":19,
-      "jobType":"Front-end Developer",
+      "id": 19,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "Content Writing for Blog",
       "description": "I need a native English speaker to write high-quality blog posts for my website. The posts should be well-researched and SEO-friendly.",
-      "skills": ["Content Writing", "SEO"],
+      "skills": [
+        "Content Writing",
+        "SEO"
+      ],
       "priceType": "Hourly",
       "from": 10,
       "to": 20,
@@ -321,16 +427,22 @@
       "postTime": "2023-03-08T16:20:00Z",
       "proposals": 9,
       "verified": false,
-      "star": 4.0,
+      "star": 4,
       "location": "United Kingdom",
       "spent": 3000
     },
     {
-      "id":20,
-      "jobType":"Front-end Developer",
+      "id": 20,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "Build a website for my small business",
       "description": "I need a website for my small business, which is a local coffee shop.",
-      "skills": ["Web Design", "HTML", "CSS", "JavaScript"],
+      "skills": [
+        "Web Design",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
       "priceType": "Fixed-price",
       "developerLevel": "Intermediate",
       "budget": 500,
@@ -342,11 +454,16 @@
       "spent": 20
     },
     {
-      "id":21,
-      "jobType":"Front-end Developer",
+      "id": 21,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "Design a logo for my new startup",
       "description": "I'm starting a new tech company and I need a logo design that reflects our values and mission.",
-      "skills": ["Graphic Design", "Logo Design", "Branding"],
+      "skills": [
+        "Graphic Design",
+        "Logo Design",
+        "Branding"
+      ],
       "priceType": "Fixed-Price",
       "developerLevel": "Expert",
       "budget": null,
@@ -358,8 +475,9 @@
       "spent": 0
     },
     {
-      "id":22,
-      "jobType":"Cross-Platform Development",
+      "id": 22,
+      "isSaved": false,
+      "jobType": "Cross-Platform Development",
       "title": "Develop a mobile app for iOS and Android",
       "description": "I need a mobile app developed for my online store, which sells a variety of products.",
       "skills": [
@@ -378,11 +496,16 @@
       "spent": 0
     },
     {
-      "id":23,
-      "jobType":"Front-end Developer",
+      "id": 23,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "Build a custom CRM system for my business",
       "description": "I need a custom CRM system developed for my small business, which specializes in marketing services.",
-      "skills": ["Web Development", "CRM Development", "Database Design"],
+      "skills": [
+        "Web Development",
+        "CRM Development",
+        "Database Design"
+      ],
       "priceType": "Fixed-price",
       "developerLevel": "Advanced",
       "budget": 10000,
@@ -394,11 +517,16 @@
       "spent": 0
     },
     {
-      "id":24,
-      "jobType":"Front-end Developer",
+      "id": 24,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "Write a book about personal finance",
       "description": "I'm looking for an experienced writer to help me write a book about personal finance, including budgeting, investing, and saving.",
-      "skills": ["Writing", "Book Writing", "Personal Finance"],
+      "skills": [
+        "Writing",
+        "Book Writing",
+        "Personal Finance"
+      ],
       "priceType": "Fixed-Price",
       "developerLevel": "Intermediate",
       "budget": null,
@@ -408,12 +536,19 @@
       "star": 2,
       "location": "Toronto, Canada",
       "spent": 12
-    }, {
-      "id":25,
-      "jobType":"Front-end Developer",
+    },
+    {
+      "id": 25,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "Front-end Developer(HTML5/CSS3/Bootstrap)",
       "description": "Looking for a super fast front-end developer who can help us to build our home page. We already redesigned our home page and you will have to rebuild it in HTML5, CSS3, and Bootstrap so that we can import it into our main PHP project. Will share the final design to selected candidate.",
-      "skills": ["CSS", "JavaScript (ES6+)", "React", "Node.js"],
+      "skills": [
+        "CSS",
+        "JavaScript (ES6+)",
+        "React",
+        "Node.js"
+      ],
       "PriceType": "fixed-price",
       "HourlyRate": "",
       "Price": "$500",
@@ -427,11 +562,16 @@
       "spent": 1200
     },
     {
-      "id":26,
-      "jobType":"Back-end Developer",
+      "id": 26,
+      "isSaved": false,
+      "jobType": "Back-end Developer",
       "title": "Build a mobile app",
       "description": "Looking for an experienced developer to build a mobile app for iOS and Android.",
-      "skills": ["iOS development", "Android development", "UI/UX design"],
+      "skills": [
+        "iOS development",
+        "Android development",
+        "UI/UX design"
+      ],
       "priceType": "Fixed-price",
       "developerLevel": "Expert",
       "budget": 5000,
@@ -443,11 +583,17 @@
       "spent": 10000
     },
     {
-      "id":27,
-      "jobType":"Front-end Developer",
+      "id": 27,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "Website redesign",
       "description": "We need a professional web designer to redesign our company website.",
-      "skills": ["Web design", "HTML", "CSS", "JavaScript"],
+      "skills": [
+        "Web design",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
       "priceType": "Hourly",
       "developerLevel": "Intermediate",
       "budget": 50,
@@ -459,8 +605,9 @@
       "spent": 0
     },
     {
-      "id":28,
-      "jobType":"Front-end Developer",
+      "id": 28,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "E-commerce website development",
       "description": "We want to build an e-commerce website with advanced search and filtering capabilities.",
       "skills": [
@@ -480,8 +627,9 @@
       "spent": 20000
     },
     {
-      "id":29,
-      "jobType":"Back-end Developer",
+      "id": 29,
+      "isSaved": false,
+      "jobType": "Back-end Developer",
       "title": "Mobile game development",
       "description": "We're looking for a developer to create a fun and addictive mobile game for iOS and Android.",
       "skills": [
@@ -499,12 +647,19 @@
       "star": 4,
       "location": "Tokyo",
       "spent": 15000
-    },{
-      "id":30,
-      "jobType":"Front-end Developer",
+    },
+    {
+      "id": 30,
+      "isSaved": false,
+      "jobType": "Front-end Developer",
       "title": "Build a website for my small business",
       "description": "I need a website for my small business, which is a local coffee shop.",
-      "skills": ["Web Design", "HTML", "CSS", "JavaScript"],
+      "skills": [
+        "Web Design",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
       "priceType": "Fixed-price",
       "developerLevel": "Intermediate",
       "budget": 500,
@@ -514,6 +669,22 @@
       "star": 4.8,
       "location": "New York, USA",
       "spent": 20
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "title": "Frontend Developer ",
+      "location": " Gaza, Palestinian Territories – ",
+      "skills": [
+        "html",
+        "css",
+        "JavaScript",
+        "react",
+        "redux"
+      ],
+      "overview": "I’m a developer with experience in HTML and CSS 3,JS,Python\n    I’ll fully project manage your brief from start to finish\n    Regular communication is really important to me, so let’s keep in touch!”",
+      "hourlyRate": 10
     }
   ]
 }

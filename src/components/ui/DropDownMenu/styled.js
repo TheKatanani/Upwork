@@ -23,7 +23,9 @@ export const StyledMenu = styled.ul`
     transform: translateX(-50%) rotate(135deg);
     box-shadow: -2px 2px 3px rgb(57 73 76 / 10%);
   }
-  li{
+  z-index:999;
+  li,a{
+    display: block;
     padding:12px 15px;
     cursor: pointer;
     :hover{

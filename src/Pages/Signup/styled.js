@@ -42,21 +42,6 @@ border:2px solid ${(props)=>props.theme.palette.ColorApp.border};
         font-weight: 500;
     }
 
-    input{
-        background-color: #fff;
-        padding:8px  10px;
-    }
-    .logInPassword{
-        position:relative;
-        span{
-            position:absolute;
-            top:50%;
-            transform: translateY(-50%);
-            right: 10px;
-            width:20px;
-            cursor: pointer;
-        }
-    }
     div.google{
         position:relative;
         svg{
@@ -65,19 +50,6 @@ border:2px solid ${(props)=>props.theme.palette.ColorApp.border};
             transform: translateY(-50%);
             left: 2px;
             border-radius: 50%;
-        }
-    }
-    .or{
-        margin: 25px 0;
-    }
-    .create{
-        margin:20px 0;
-    }
-    .already{
-        margin:31px auto 0;
-        a{
-            color:${props=> props.theme.palette.ColorApp.primary};
-            text-decoration: none;
         }
     }
 `

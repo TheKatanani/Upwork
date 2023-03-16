@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-export const StyledNav = styled.nav `
+export const StyledHeader = styled.nav `
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,13 +44,17 @@ export const StyledNav = styled.nav `
     }
     li.searchBox{
       flex:1;
+      position: relative;
       .searchBox{
         justify-content: flex-end;
       }
     }
   }
-  .avater{
-    width: 32px;
-    height: 32px;
+  li.avater{
+    cursor: pointer;
+    .avater{
+      width: 32px;
+      height: 32px;
+    }
   }
 `

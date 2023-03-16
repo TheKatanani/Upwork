@@ -5,7 +5,7 @@ import { SkillsStyled } from './styled'
 const Skills = ({data}) => {
   return (
     <SkillsStyled className="skills">
-    {data.map((el, i) => <Skill className="skill" key={i}>{el}</Skill>)}
+    {data?.map((el, i) => <Skill className="skill" key={i}>{el}</Skill>)}
   </SkillsStyled>
   )
 }
