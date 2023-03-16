@@ -23,6 +23,9 @@ section{
 a{
   color:${({theme})=>theme.palette.ColorApp.primary};
 }  
+main{
+  flex:1;
+}
     .content{
     border:1px solid ${({theme})=>theme.palette.ColorApp.border};
     border-radius: 16px;

@@ -11,11 +11,13 @@ import useFetch from '../../hook/useFetch'
 import { DetailsStyled } from './styled'
 import dateCalculator from '../../utils/dateCalculator'
 import IconBox from '../../components/common/IconBox'
+import { useSelector } from 'react-redux'
 const JopDetails = () => {
   const [copy, setCopy] = useState(false)
   const { id } = useParams()
-  const { data, error, isLoading } = useFetch(`${mainApi}products/${id}`)
-  const url = `https://www.upwork.com/home/details/${id}`
+  const idPortal = useSelector(state => state.portal.id)
+  const { data, error, isLoading } = useFetch(`${mainApi}jobs/${id||idPortal}`)
+  const url = `https://www.upwork.com/home/details/${id||idPortal}`
   if (isLoading) {
     return <Loading />
   }
@@ -124,24 +126,4 @@ if click on the button the e.target.focus is return true then add class or any e
 onClick={() => {navigator.clipboard.writeText(this.state.textToCopy)}}
 {  textField.select() now i need to create ref and copy it 
   document.execCommand('copy')
-      "id":5,
-      "jobType":"Front-end Developer",
-      "title": "Mobile game development",
-      "description": "We're looking for a developer to create a fun and addictive mobile game for iOS and Android.",
-      "skills": [
-        "Game development",
-        "Unity",
-        "C# programming",
-        "Graphics design"
-      ],
-      "priceType": "Fixed-price",
-      "developerLevel": "Expert",
-      "budget": 10000,
-      "postTime": "2023-01-01T12:00:00Z",
-      "proposals": 20,
-      "verified": true,
-      "star": 4,
-      "location": "Tokyo",
-      "spent": 15000
-    },
 */

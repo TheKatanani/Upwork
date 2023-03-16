@@ -4,7 +4,7 @@ import { boolean, object, string } from 'yup';
 
 export const passwordRegexMedium = /(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.{6,})/;
 
-export const validationSchemaSignIn = object().shape({
+export const SchemaLogin = object().shape({
   email:
     string()
       .email("Invalid email")
@@ -13,7 +13,7 @@ export const validationSchemaSignIn = object().shape({
     .min(6, 'Password must be at least 6 characters')
     .required('Password is required'),
 });
-export const validationSchemaRegister = object().shape({
+export const Schema = object().shape({
   fname:
     string()
       .min(6, "Name should be more than 6 characters long")

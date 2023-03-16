@@ -1,4 +1,4 @@
-import AvaterImage from '../../../assets/images/Avater.png'
+import AvaterImage from '../../../assets/images/Avatar.png'
 import { AvaterStyled } from './styled'
 
 const Avater = () => {

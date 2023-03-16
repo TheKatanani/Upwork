@@ -3,19 +3,28 @@ import { Contracts, Help, Notification, UpNav } from '../../../assets/Icons'
 import Avater from '../../common/Avater'
 import Logo from '../../common/Logo'
 import DropDownMenu from '../../ui/DropDownMenu'
-import { StyledNav } from './styled'
+import { StyledHeader } from './styled'
 import SearchBox from '../../ui/SearchBox'
-
-const Nav = () => {
+import AvaterDropDown from '../../common/AvaterDropDown'
+import { useState } from 'react'
+const mook = [
+  {path:'/home/bestMatches',text:"finde work"},
+  {path:'/home/mostRecent',text:"mostRecent"},
+  {path:'/home/saved',text:"saved"},
+  {path:'/home/Profile',text:"Profile"},
+  {path:'/home/Search',text:"Search"},
+]
+const Header = () => {
+  const [show , setShow] = useState(false)
   return (
-    <StyledNav>
+    <StyledHeader>
       <div className="logo">
         <Logo/>
       </div>
       <ul>
         <li className='dropdown'>
           <NavLink to='/home'>Find Work <UpNav/></NavLink>
-          <DropDownMenu items={['test','test','test','test']}/>
+          <DropDownMenu items={mook}/>
         </li>
         <li className='dropdown'>
           <NavLink to="/myjobs">My jobs <UpNav/></NavLink>
@@ -30,10 +39,15 @@ const Nav = () => {
         <li><Help/></li>
         <li><Contracts/></li>
         <li><Notification/></li>
-        <li><Avater/></li>
+        <li className='avater' >
+          <div  onClick={()=>setShow(prev=>!prev)}>
+            <Avater/>
+          </div>
+          {show&&<AvaterDropDown />}
+        </li>
       </ul>
-    </StyledNav>
+    </StyledHeader>
   )
 }
 
-export default Nav
+export default Header

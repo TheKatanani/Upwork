@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Search } from '../../../assets/Icons'
+import SearchInput from '../../common/SearchInput'
 import Select from '../../common/Select'
+import SearchResult from '../SearchResult'
 import { StyledSearch } from './styled'
-const mook=[{
+const mook = [{
   value: "",
   label: "jobs"
 },
@@ -20,16 +22,19 @@ const mook=[{
 }
 ]
 function SearchBox() {
+  const [show, setShow] = useState(false);
+ 
   return (
-    <StyledSearch className="searchBox">
-            <div className="iconArea"><Search/></div>
-            <input type="text" placeholder='Search'/>
-            <div className="select">
-              <Select value='tesst'
-                onChange // create slice to the select if you want in rtk folder
-                options={mook}/>
-              </div>
-          </StyledSearch>
+    <StyledSearch {...{ show }} className="searchBox">
+      <div className="iconArea"><Search /></div>
+      <SearchInput {...{setShow}}/>
+      <div className="select">
+        <Select value='tesst'
+          onChange // create states to the select if you want in rtk folder
+          options={mook} />
+      </div>
+      <SearchResult />
+    </StyledSearch>
   )
 }
 

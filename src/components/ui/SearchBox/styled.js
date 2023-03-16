@@ -40,4 +40,15 @@ export const StyledSearch = styled.div`
     text-align: center;
     padding: 0 5px;
   }
+  ${({show})=>
+  show?`
+    .SearchResult{
+        display:block ;
+      }
+  `:`
+    .SearchResult{
+        display:none;
+    }
+  `
+  }
 `

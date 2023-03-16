@@ -6,7 +6,6 @@ import MyRoutes from './Routes';
 
 function App() {
   const [theme, setTheme] = useState(lightTheme);
-  // const [authenticated, setAuthenticated] = useState(false);
   useEffect(() => {
     setTheme(localStorage.getItem('theme')==='light'? darkTheme: lightTheme );
   }, []);

@@ -1,14 +1,16 @@
 import { useSelector } from "react-redux";
 import { Outlet, Navigate } from "react-router-dom";
 import AppFooter from "../components/views/AppFooter";
-import Nav from "../components/views/Nav";
+import Header from "../components/views/Header";
+import CardPortal from "../components/views/JobCard/CardPortal";
 
 const PrivateRoute = () => {
   const state = useSelector(state => state.auth)
   return state.isAuthenticated ? <>
-    <Nav />
+    <Header />
     <Outlet />
-    <AppFooter/>
+    <AppFooter />
+    <CardPortal />
   </>
     : <Navigate to='/login' />
 };
