@@ -1,7 +1,13 @@
 import styled from "styled-components";
 export const LoginStyled = styled.div `
     text-align:center;
-    width:510px;
+    width:min(510px,90%);
+    ${({theme})=>theme.media.xs} {
+        padding:20px  20px 10px;
+    }
+    ${({theme})=>theme.media.s} {
+        padding:20px  40px;
+    }
     padding:40px 80px;
     margin:80px auto;
     border-radius: 16px;

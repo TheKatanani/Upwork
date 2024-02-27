@@ -4,6 +4,12 @@ export const FormStyled = styled.form`
 
 input{
         background-color: #fff;
+        ${({theme})=>theme.media.xs} {
+            padding:1px  30px;
+        }
+        ${({theme})=>theme.media.s} {
+            padding:4px  35px;
+        }
         padding:8px  40px;
     }
     .logInPassword{
