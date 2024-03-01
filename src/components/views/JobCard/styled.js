@@ -2,6 +2,13 @@ import styled from "styled-components";
 
 export const StyledCard =styled.div`
     border-bottom:1px solid ${({theme})=>theme.palette.ColorApp.border};
+    ${({theme})=>theme.media.xs} {
+        padding: 12px;
+      }
+      ${({theme})=>theme.media.s} {
+        padding: 20px;
+        
+      } 
     padding: 30px;
     transition: 0.3s;
     cursor: pointer;

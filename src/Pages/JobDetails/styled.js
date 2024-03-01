@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const DetailsStyled = styled.div `
 .container{
-  width: 1018px;
+  ${({theme})=>theme.media.l} {
+    width: 1018px;
+  }
 }
 color: ${({theme})=>theme.palette.font};
 font-size: ${({theme}) =>theme.fontSizes.body}rem;
@@ -11,7 +13,10 @@ h1{
   margin: 30px ;
 }
 h2{
-  font-size: ${({theme}) =>theme.fontSizes.h2}rem;
+  font-size: ${({theme}) =>theme.fontSizes.h3*0.9}rem;
+  ${({theme})=>theme.media.l} {
+    font-size: ${({theme}) =>theme.fontSizes.h2}rem;
+  }
     margin: 20px 0;
     font-weight: normal;
 }
@@ -30,6 +35,7 @@ main{
     border:1px solid ${({theme})=>theme.palette.ColorApp.border};
     border-radius: 16px;
     display: flex;
+    flex-wrap: wrap;
     header.title{
       padding:25px 30px;
     }
@@ -65,7 +71,10 @@ main{
     }
   }
 aside{
-  min-width: 350px;
+  min-width: 100%;
+  ${({theme})=>theme.media.l} {
+    min-width: 350px;
+  }
   border-left:1px solid ${({theme})=>theme.palette.ColorApp.border};
   section.buttons{
     button:first-child{

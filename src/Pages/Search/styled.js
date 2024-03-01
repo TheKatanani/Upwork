@@ -4,8 +4,17 @@ export const SearchStyled = styled.div`
 margin: 30px 0;
 .container{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap:20px;
+    ${({theme})=>theme.media.xs} {
+      margin:10px;
+      justify-content: center;
+    }
+    ${({theme})=>theme.media.s} {
+      margin:10px;
+      justify-content: center;
+    }
     .filters{
       min-width: 230px;
     }
@@ -14,6 +23,13 @@ margin: 30px 0;
 export const MainStyled = styled.div`
   border:2px solid ${(props)=>props.theme.palette.ColorApp.up_green_light};
   border-radius: 20px;
+  min-width: min(100%,420px);
+  ${({theme})=>theme.media.xs} {
+      margin:10px;
+    }
+    ${({theme})=>theme.media.s} {
+      margin:10px;
+    }
   flex: 1;
   header{
     margin: 30px 20px;

@@ -2,9 +2,17 @@ import styled from 'styled-components'
 export const StyleFooter=styled.div`
     background-color: ${(props)=>props.theme.palette.ColorApp.up_black};
     margin: 24px;
+    padding:48px;
+    ${({theme})=>theme.media.xs} {
+      margin:10px;
+      padding:35px; 
+    }
+    ${({theme})=>theme.media.s} {
+      margin:10px;
+      padding:40px;
+    }
     text-align: center;
     border-radius: 8px;
-    padding:48px;
     p{
         padding:30px 0 0;
         color: ${(props)=>props.theme.palette.main};
@@ -31,9 +39,19 @@ export const StyleFooter=styled.div`
                 text-align: start;
             }
         }
+        ${({theme})=>theme.media.xs} {
+            justify-content: center;
+            ul{
+                width: 100%;
+                li{
+                    text-align: center;
+                }
+            }
+    }
     }
     .icons{
         display: flex;
+        flex-wrap: wrap;
         border-bottom: 2px solid ${(props)=>props.theme.palette.ColorApp.border};
         justify-content: space-between;
         align-items: center;
@@ -41,6 +59,7 @@ export const StyleFooter=styled.div`
         >div{
             align-items: center;
             display: flex;
+            flex-wrap: wrap;
             gap:8px;
             p{
                 padding: 0;

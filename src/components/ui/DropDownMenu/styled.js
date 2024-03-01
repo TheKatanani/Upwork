@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 export const StyledMenu = styled.ul`
+  ${({mobile})=>mobile?` 
+  a{
+    font-size: ${(props) => props.theme.fontSizes.body}rem;
+  }
+  `:`
   position: relative;
   box-shadow: 0 0 10px 2px rgba(0,30,0,0.15);
   border-radius: 6px;
   width:200px;
-  margin-top: 7px;
-  background-color: ${(props)=>props.theme.palette.main};
-  .active{
-    background-color: ${(props)=>props.theme.palette.ColorApp.primary};;
-  }
   ::before{
     content: "";
     display: block;
@@ -24,6 +24,14 @@ export const StyledMenu = styled.ul`
     box-shadow: -2px 2px 3px rgb(57 73 76 / 10%);
   }
   z-index:999;
+  `}
+  
+  margin-top: 7px;
+  background-color: ${(props)=>props.theme.palette.main};
+  .active{
+    background-color: ${(props)=>props.theme.palette.ColorApp.primary};
+  }
+ 
   li,a{
     display: block;
     padding:12px 15px;

@@ -38,7 +38,15 @@ export const JobsMightLikeStyled = styled.div`
     font-size: ${({theme}) =>theme.fontSizes.body}rem;
     color: ${({theme})=>theme.palette.font};
     >p{
-      padding: 20px 30px 20px;
+      ${({theme})=>theme.media.xs} {
+        padding: 18px 12px;
+      }
+      ${({theme})=>theme.media.s} {
+        padding: 10px 15px;
+      }
+      ${({theme})=>theme.media.l} {
+        padding: 20px 30px;
+      }
     }
   }
 `

@@ -1,30 +1,20 @@
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Contracts, Help, Notification, UpNav } from '../../../assets/Icons'
-import Avater from '../../common/Avater'
-import Logo from '../../common/Logo'
 import DropDownMenu from '../../ui/DropDownMenu'
-import { StyledHeader } from './styled'
 import SearchBox from '../../ui/SearchBox'
+import Avater from '../../common/Avater'
 import AvaterDropDown from '../../common/AvaterDropDown'
-import { useState } from 'react'
-const mook = [
-  {path:'/home/bestMatches',text:"finde work"},
-  {path:'/home/mostRecent',text:"mostRecent"},
-  {path:'/home/saved',text:"saved"},
-  {path:'/home/Profile',text:"Profile"},
-  {path:'/home/Search',text:"Search"},
-]
-const Header = () => {
+import { StyledUl } from './styled'
+import { findWorkDropDown } from '../../../mock'
+
+const Nav = () => {
   const [show , setShow] = useState(false)
   return (
-    <StyledHeader>
-      <div className="logo">
-        <Logo/>
-      </div>
-      <ul>
+    <StyledUl>
         <li className='dropdown'>
           <NavLink to='/home'>Find Work <UpNav/></NavLink>
-          <DropDownMenu items={mook}/>
+          <DropDownMenu items={findWorkDropDown}/>
         </li>
         <li className='dropdown'>
           <NavLink to="/myjobs">My jobs <UpNav/></NavLink>
@@ -45,9 +35,8 @@ const Header = () => {
           </div>
           {show&&<AvaterDropDown />}
         </li>
-      </ul>
-    </StyledHeader>
+      </StyledUl>
   )
 }
 
-export default Header
+export default Nav
