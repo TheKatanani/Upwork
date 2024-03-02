@@ -24,7 +24,6 @@ svg{
   transition:0.4s;
 } */
 ${({showRow})=>{
-  console.log(showRow)
   return showRow.map(el=>(
     `#${el.id}{
       >ul{

@@ -15,7 +15,6 @@ const MobileMenue = ({showMenu}) => {
   const dispatch = useDispatch()
   const showHandling = (id) => {
     const currentRow = show.find((el) => el.id === id)
-    console.log(currentRow)
     if (currentRow) {
       currentRow.status = !currentRow.status 
       setShow((prev)=>(prev.map(el=>el.id===currentRow.id?currentRow:el)))
