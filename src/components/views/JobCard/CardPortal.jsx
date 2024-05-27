@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import JopDetails from '../../../Pages/JobDetails'
@@ -16,18 +16,20 @@ const CardPortalStyled = styled.div`
     }
     span{
       font-size: 40px;
+      cursor: pointer;
     }
   }
 `
 const CardPortal = () => {
   const { id  } = useSelector(state => state.portal)
+  const dispatch = useDispatch()
   return (
     <Portal card>
       <CardPortalStyled>
         <header>
-          <span>{"<"}</span>
+          <span onClick={() => dispatch(showPortal({ show: false , id }))}>{"<"}</span>
           <Link to={`/home/details/${id}`}
-            onClick={() => dispatchEvent(showPortal({ show: false , id }))}
+            onClick={() => dispatch(showPortal({ show: false , id }))}
           >Open job in a new window</Link>
         </header>
         <JopDetails {...{id}} />

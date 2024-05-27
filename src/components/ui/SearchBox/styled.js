@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 export const StyledSearch = styled.div`
   height:36px;
-  width:380px;
+  width:280px;
+  ${({theme})=>theme.media.xl} {
+    width:380px;
+    }
+  min-width: min(260px,100%);
   border-radius: 20px;
   border:2px solid ${(props)=>props.theme.palette.ColorApp.up_green_light};
   margin-left: auto;

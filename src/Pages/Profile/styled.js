@@ -42,15 +42,25 @@ a{
 .container{
   border:1px solid ${({theme})=>theme.palette.ColorApp.border};
   border-radius: 16px;
-  width: 1018px;
+  width:min(1018px,90%);
+    ${({theme})=>theme.media.xs} {
+        margin:20px  20px 10px;
+    }
+    ${({theme})=>theme.media.s} {
+        margin:20px  auto;
+    }
   >header{
     display: flex;
+    flex-wrap: wrap;
     padding: 20px;
     justify-content: space-between;
     .box{
       display: flex;
       flex: 1;
       gap:20px;
+      ${({theme})=>theme.media.xs} {
+        margin-bottom: 20px;
+    }
       div.avater{
         position: relative;
         .iconBox{
@@ -109,9 +119,18 @@ a{
       justify-content: flex-end;
       gap:23px;
       flex:1;
+      ${({theme})=>theme.media.xs} {
+        justify-content: center;
+      }
+      ${({theme})=>theme.media.xs} {
+        justify-content: center;
+  }
       button{
         width: fit-content;
         padding: 8px 30px;
+        ${({theme})=>theme.media.xs} {
+        padding:5px  15px;
+    }
         margin: 0;
         line-height: unset;
       }
@@ -120,12 +139,23 @@ a{
   }
   >.content{
     display: flex;
+    ${({theme})=>theme.media.xs} {
+    flex-wrap:wrap;
+    }
+    ${({theme})=>theme.media.s} {
+    flex-wrap:wrap;
+  }
+    ${({theme})=>theme.media.l} {
+    flex-wrap:nowrap;
+  }
     header.title{
       padding:25px 30px;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       div{
         display: flex;
+        flex-wrap:wrap;
         align-items: center;
         gap: 10px;
         font-weight: bold;

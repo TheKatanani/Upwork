@@ -1,7 +1,13 @@
 import styled from "styled-components";
 export const SignupStyled = styled.div `
 text-align:center;
-width:670px;
+width:min(670px,90%);
+${({theme})=>theme.media.xs} {
+    padding:20px  22px 10px;
+}
+${({theme})=>theme.media.s} {
+    padding:30px  28px;
+}
 padding:51px 31px;
 margin:80px auto;
 border-radius: 16px;

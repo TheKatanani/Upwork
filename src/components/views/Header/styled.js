@@ -1,8 +1,35 @@
 import styled from 'styled-components'
 export const StyledHeader = styled.nav `
   display: flex;
-  justify-content: center;
+  flex-wrap:wrap;
   align-items: center;
+  .searchIcon{
+    width: 20px;
+  }
+  ${({theme})=>theme.media.xs} { 
+      justify-content: space-between;
+      .searchIcon{
+        svg{
+          display: block;
+        }
+      }
+    }
+    ${({theme})=>theme.media.s} {
+      justify-content: space-between;
+      .searchIcon{
+        svg{
+          display: block;
+        }
+      }
+    }
+    ${({theme})=>theme.media.m} {
+      justify-content: center;
+      .searchIcon{
+        svg{
+          display: none;
+        }
+      }
+    }
   padding:21px 24px;
   a{
     text-decoration: none;
@@ -11,45 +38,6 @@ export const StyledHeader = styled.nav `
     width:75px;
     margin-right: 25px;
   }
-  >ul{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex:1;
-    gap:22px;
-    li{
-      >a{
-        color:${({theme})=>theme.palette.font};
-        font-size: ${({theme}) =>theme.fontSizes.body}rem;
-        &.active,&:hover{
-          color:${({theme})=>theme.palette.ColorApp.primary};
-        }
-        svg{
-          width:12px;
-        }
-      }
-      min-width:24px;
-      &.dropdown{
-        position: relative;
-      .menu{
-        position: absolute;
-        display: none;
-      }
-      :hover{
-        .menu{
-          display: block;
-        }
-      }
-      }
-    }
-    li.searchBox{
-      flex:1;
-      position: relative;
-      .searchBox{
-        justify-content: flex-end;
-      }
-    }
-  }
   li.avater{
     cursor: pointer;
     .avater{
@@ -57,4 +45,22 @@ export const StyledHeader = styled.nav `
       height: 32px;
     }
   }
+  .menuLogoContainer{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+  }
+  >svg{
+    width: 20px;
+  }
+  .layout{
+            position:fixed;
+            top:0;
+            width:100vw;
+            height:100vh;
+            background-color:#00000052;
+            z-index:1;
+            transition: 0.3s;
+        }
 `

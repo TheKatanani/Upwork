@@ -11,8 +11,7 @@ import {
 } from '../../../../redux/reducers/login';
 import { login, setUser } from '../../../../redux/reducers/auth';
 import { SchemaLogin } from '../Schema';
-import axios from 'axios';
-import { authApi } from '../../../../API';
+import axios from 'axios'; 
 import { Apple, Goolge, Password, ShowPassword, UnShowPassword, User } from '../../../../assets/Icons';
 import Input from '../../../common/Input';
 import ErrorForm from '../../../common/ErrorForm';
@@ -32,14 +31,22 @@ const LoginForm = () => {
     dispatch(error(null));
     try {
       await SchemaLogin.validate(formState, { abortEarly: false });
-      const res = await axios.post(`${authApi}/users/login`, {
-        email: formState.email,
-        password: formState.password,
+      // const res = await axios.post(`${authApi}/users/login`, {
+      //   email: formState.email,
+      //   password: formState.password,
+      // });
+      const res = await axios.post(`https://project-perfume.000webhostapp.com/api/login`, {
+        data: {
+          email: "api2@gmail.com",
+          password: "password"
+        },
+        'Accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded'
       });
       if (res.data) {
         localStorage.setItem('token', res.data.token);
         dispatch(login({ token: res.data.token }))
-        dispatch(setUser({name:res.data.name}))
+        dispatch(setUser({ name: res.data.name }))
       }
     } catch (e) {
       const errors = e.inner?.reduce((acc, { path, message }) => {

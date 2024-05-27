@@ -1,8 +1,15 @@
 import styled from "styled-components";
 
 export const PortalStyled = styled.div`
-  display: ${({ state }) => (state ? "block" : "none")};
+    ${({ state }) => (!state ? `
+      opacity: 0;
+      visibility: hidden;
+    `:` 
+      opacity: 1;
+      visibility: visible;
+    `)};
   .layout {
+    display: ${({ state }) => (state ? "block" : "none")};
     position: fixed;
     top: 0;
     left: 0;
@@ -12,7 +19,6 @@ export const PortalStyled = styled.div`
     opacity: 0.2;
     z-index: 999;
   }
-  
   .children {
     position: fixed;
     ${({card,state})=>card?`
@@ -29,7 +35,7 @@ export const PortalStyled = styled.div`
     background-color: ${({ theme }) => theme.palette.main};
     padding: 20px;
     z-index: 1000;
-    transition: right 3s ease-in-out, opacity 8s ease-in-out;
+    transition: right .4s ease-in-out, opacity .8s ease-in-out;
     overflow: scroll;
      /* Scrollbar */
      ::-webkit-scrollbar {
