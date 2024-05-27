@@ -11,8 +11,7 @@ import {
 } from '../../../../redux/reducers/login';
 import { login, setUser } from '../../../../redux/reducers/auth';
 import { SchemaLogin } from '../Schema';
-import axios from 'axios';
-import { authApi } from '../../../../API';
+import axios from 'axios'; 
 import { Apple, Goolge, Password, ShowPassword, UnShowPassword, User } from '../../../../assets/Icons';
 import Input from '../../../common/Input';
 import ErrorForm from '../../../common/ErrorForm';
