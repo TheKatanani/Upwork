@@ -1,33 +1,38 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { mainApi } from '../../../API'
-import useFetch from '../../../hook/useFetch'
-import Avater from '../../common/Avater'
-import Loading from '../../common/Loading'
-import ProfileComplete from '../../ui/ProfileComplete'
-import AsideItem from './AsideItem'
-import { StyledAside } from './styled'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { mainApi } from '../../../API';
+import useFetch from '../../../hook/useFetch';
+import Avater from '../../common/Avater';
+import Loading from '../../common/Loading';
+import ProfileComplete from '../../ui/ProfileComplete';
+import AsideItem from './AsideItem';
+import { StyledAside } from './styled';
 
 function Aside() {
-  const {data ,isLoading,error} = useFetch(`${mainApi}user/1`)
-  const name = useSelector(state=>state.auth.user)
-  if(isLoading){
-    return <Loading/>
+  const { data, isLoading, error } = useFetch(`${mainApi}user/1`);
+  const name = useSelector((state) => state.auth.user);
+
+  if (isLoading) {
+    return <Loading />;
   }
-  if(error){
-    return <p>{error.messige}</p>
+
+  if (error && !data) {
+    return <p>{error?.message || 'Error loading profile'}</p>;
   }
+
+  const userTitle = data?.title || 'Frontend Developer';
+
   return (
     <StyledAside>
       <div className="avaterArea">
-        <Avater/>
-        <Link to="/home/profile">{name}</Link>
-        <p className="jobTitle">{data.title}</p>
+        <Avater />
+        <Link to="/home/profile">{name || 'Freelancer'}</Link>
+        <p className="jobTitle">{userTitle}</p>
       </div>
-      <ProfileComplete/>
+      <ProfileComplete />
       <div className="conectsNum">
-        <Link to="">120 Available Connects</Link>
+        <Link to="#">120 Available Connects</Link>
       </div>
       <main>
         <AsideItem title="Hours per week">
@@ -37,15 +42,15 @@ function Aside() {
           <p>Public</p>
         </AsideItem>
         <AsideItem title="Job Preference">
-          <p>No prefernce set</p>
+          <p>No preference set</p>
         </AsideItem>
       </main>
       <footer>
-        <AsideItem title="My Categories "/>
-        <Link to="">Web Development</Link>
+        <AsideItem title="My Categories " />
+        <Link to="#">Web Development</Link>
       </footer>
     </StyledAside>
-  )
+  );
 }
 
-export default Aside
+export default Aside;

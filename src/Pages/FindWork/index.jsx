@@ -1,28 +1,33 @@
-import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Container } from '../../assets/styled-components/components'
-import Aside from '../../components/views/Aside'
-import JobsMightLike from '../../components/views/JobsMightLike'
-import SearchForJob from '../../components/views/SearchForJob'
-import { StyledFindWork } from './styled'
+import { useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { Container } from '../../assets/styled-components/components';
+import Aside from '../../components/views/Aside';
+import JobsMightLike from '../../components/views/JobsMightLike';
+import SearchForJob from '../../components/views/SearchForJob';
+import { StyledFindWork } from './styled';
 
 function FindWork() {
-  const navigate=useNavigate()
-  useEffect(()=>{
-    navigate('/home/bestMatches')
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const currentPath = location.pathname.toLowerCase().replace(/\/$/, '');
+    if (currentPath === '/home' || currentPath === '') {
+      navigate('/Home/bestMatches', { replace: true });
+    }
+  }, [location.pathname, navigate]);
+
   return (
     <StyledFindWork>
       <Container className='container'>
         <main>
-          <SearchForJob/>
-          <JobsMightLike/>
+          <SearchForJob />
+          <JobsMightLike />
         </main>
         <Aside />
       </Container>
     </StyledFindWork>
-  )
+  );
 }
 
-export default FindWork
+export default FindWork;

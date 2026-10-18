@@ -1,41 +1,47 @@
-import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { mainApi } from '../../API'
-import { Heart, Verified, WorldWide } from '../../assets/Icons'
-import { Container, MainButton } from '../../assets/styled-components/components'
-import Loading from '../../components/common/Loading'
-import Rating from '../../components/common/Rating'
-import { Input } from '../../components/common/Input/style'
-import Skills from '../../components/views/Skills'
-import useFetch from '../../hook/useFetch'
-import { DetailsStyled } from './styled'
-import dateCalculator from '../../utils/dateCalculator'
-import IconBox from '../../components/common/IconBox'
-import { useSelector } from 'react-redux'
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { mainApi } from '../../API';
+import { Heart, Verified, WorldWide } from '../../assets/Icons';
+import { Container, MainButton } from '../../assets/styled-components/components';
+import Loading from '../../components/common/Loading';
+import Rating from '../../components/common/Rating';
+import { Input } from '../../components/common/Input/style';
+import Skills from '../../components/views/Skills';
+import useFetch from '../../hook/useFetch';
+import { DetailsStyled } from './styled';
+import dateCalculator from '../../utils/dateCalculator';
+import IconBox from '../../components/common/IconBox';
+import { useSelector } from 'react-redux';
+
 const JopDetails = () => {
-  const [copy, setCopy] = useState(false)
-  const { id } = useParams()
-  const idPortal = useSelector(state => state.portal.id)
-  const { data, error, isLoading } = useFetch(`${mainApi}jobs/${id||idPortal}`)
-  const url = `https://www.upwork.com/home/details/${id||idPortal}`
+  const [copy, setCopy] = useState(false);
+  const { id } = useParams();
+  const idPortal = useSelector((state) => state.portal.id);
+  const { data, error, isLoading } = useFetch(`${mainApi}jobs/${id || idPortal}`);
+  const url = `https://www.upwork.com/home/details/${id || idPortal}`;
+
   if (isLoading) {
-    return <Loading />
+    return <Loading />;
   }
-  if (error) {
-    return <span>{error}</span>
+
+  if ((error && !data) || !data) {
+    return (
+      <span style={{ padding: '20px', display: 'block' }}>
+        {typeof error === 'string' ? error : error?.message || 'Job details not available'}
+      </span>
+    );
   }
+
   return (
     <DetailsStyled>
-      <Container className='container'>
+      <Container className="container">
         <h1>Job details</h1>
         <div className="content">
           <main>
             <header className="title">
-              <h2>
-                {data.title}
-              </h2>
+              <h2>{data.title}</h2>
             </header>
-            <section className='jobType'>
+            <section className="jobType">
               <div className="jobType">
                 <a href="/#">{data.jobType}</a>
               </div>
@@ -48,9 +54,7 @@ const JopDetails = () => {
               </div>
             </section>
             <section className="description">
-              <p>
-                {data.description}
-              </p>
+              <p>{data.description}</p>
             </section>
             <section className="details">
               <div className="price">{data.priceType}</div>
@@ -64,15 +68,15 @@ const JopDetails = () => {
             </section>
           </main>
           <aside>
-            <section className='buttons'>
+            <section className="buttons">
               <MainButton>Apply Now</MainButton>
-              <IconBox><Heart /> Save Job</IconBox>
+              <IconBox>
+                <Heart /> Save Job
+              </IconBox>
               <div className="flag">
-                <a href="/#">
-                  Flag as inappropriate
-                </a>
+                <a href="/#">Flag as inappropriate</a>
               </div>
-              <p>send a proposal for: 4 Connects</p>{/*replace it to dainamic data*/}
+              <p>send a proposal for: 4 Connects</p>
               <p>Available Connects: 130</p>
             </section>
             <section>
@@ -100,30 +104,26 @@ const JopDetails = () => {
             </section>
             <section>
               <h2>Job link</h2>
-              <Input type="text" placeholder={url} readOnly className='readOnly' />
-              <span className='copy'
+              <Input type="text" placeholder={url} readOnly className="readOnly" />
+              <span
+                className="copy"
                 onClick={() => {
-                  navigator.clipboard.writeText(url)
-                  setCopy(true)
+                  navigator.clipboard.writeText(url);
+                  setCopy(true);
                   setTimeout(() => {
-                    setCopy(false)
-                  }, 3000)
+                    setCopy(false);
+                  }, 3000);
                 }}
-              >Copy link</span>
+              >
+                Copy link
+              </span>
               {copy && <span>done</span>}
             </section>
           </aside>
         </div>
       </Container>
     </DetailsStyled>
-  )
-}
+  );
+};
 
-export default JopDetails
-
-/*
-if click on the button the e.target.focus is return true then add class or any event on set time out for ex 
-onClick={() => {navigator.clipboard.writeText(this.state.textToCopy)}}
-{  textField.select() now i need to create ref and copy it 
-  document.execCommand('copy')
-*/
+export default JopDetails;

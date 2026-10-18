@@ -1,10 +1,7 @@
-import {
-  createSlice
-} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import {
-  mainApi
-} from '../../API';
+import { mainApi } from '../../API';
+import { getMockData } from '../../services/mockService';
 
 export const jobsSlice = createSlice({
   name: 'jobs',
@@ -45,15 +42,29 @@ export const {
   clearError,
 } = jobsSlice.actions;
 
-export const selectSearchResults = state => state.jobs.searchResults;
-export const selectStatus = state => state.jobs.status;
-export const selectError = state => state.jobs.error;
+export const selectSearchResults = (state) => state.jobs.searchResults;
+export const selectStatus = (state) => state.jobs.status;
+export const selectError = (state) => state.jobs.error;
 
 export const fetchSearchResults = (searchTerm) => async (dispatch) => {
   dispatch(setStatusLoading());
   try {
-    const response = await axios.get(`${mainApi}jobs?title_like=${encodeURIComponent(searchTerm)}`);
-    dispatch(setSearchResults(response.data));
+    let results = null;
+
+    if (mainApi && !mainApi.includes('undefined') && (mainApi.startsWith('http://') || mainApi.startsWith('https://'))) {
+      try {
+        const response = await axios.get(`${mainApi}jobs?title_like=${encodeURIComponent(searchTerm)}`, { timeout: 2500 });
+        results = response.data;
+      } catch (err) {
+        console.warn('Live search API failed, falling back to mock search:', err.message);
+      }
+    }
+
+    if (!results) {
+      results = getMockData(`jobs?title_like=${encodeURIComponent(searchTerm)}`) || [];
+    }
+
+    dispatch(setSearchResults(results));
     dispatch(setStatusSucceeded());
   } catch (error) {
     dispatch(setStatusFailed(error.message));

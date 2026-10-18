@@ -1,43 +1,48 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { fetchSearchResults } from "../../../redux/reducers/jobs";
 
-
-const SearchInput = ({setShow}) => {
+const SearchInput = ({ setShow }) => {
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState('');
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const timerRef = useRef(null);
 
-  let debounceTimer;
-
-  const handleSearch = () => {
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => {
-      dispatch(fetchSearchResults(searchTerm));
-    }, 500);
-  };
   const handleEnterKeyDown = (event) => {
     if (event.key === 'Enter') {
-      // save the most resent here 
-      navigate('/home/search')
+      if (timerRef.current) clearTimeout(timerRef.current);
+      dispatch(fetchSearchResults(searchTerm));
+      navigate('/home/search');
     }
-  }
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-    handleSearch();
   };
+
+  const handleChange = (event) => {
+    const val = event.target.value;
+    setSearchTerm(val);
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => {
+      dispatch(fetchSearchResults(val));
+    }, 350);
+  };
+
   return (
     <input
-        type="text"
-        placeholder='Search'
-        onBlur={() => setShow(false)}
-        onFocus={() => setShow(true)}
-        value={searchTerm}
-        onChange={handleChange}
-        onKeyDown={handleEnterKeyDown}
-      />
-  )
-}
+      type="text"
+      placeholder="Search for jobs..."
+      onBlur={() => {
+        setTimeout(() => {
+          if (setShow) setShow(false);
+        }, 200);
+      }}
+      onFocus={() => {
+        if (setShow) setShow(true);
+      }}
+      value={searchTerm}
+      onChange={handleChange}
+      onKeyDown={handleEnterKeyDown}
+    />
+  );
+};
 
-export default SearchInput
+export default SearchInput;
